@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Heart } from 'react-feather';
+
 import './MovieDetail.css'
 import Transparent from './../img/transparent.png'
+import Button from './../components/Button'
 
 
 const MovieDetail = ({movie}) => {
@@ -16,9 +18,8 @@ const MovieDetail = ({movie}) => {
             <div className="container-movie">
                 <div className="container-horizontal">
                
-               
                 {movie.image ?  <img src={movie.image.medium} alt="" srcset="" className="poster"/> :<img src={Transparent} alt="" srcset="" />}
-                <Heart id="heart"></Heart>
+                <Button><Heart id="heart"/></Button>
                 </div>
                 <div className="info_filme">
                 
@@ -26,7 +27,6 @@ const MovieDetail = ({movie}) => {
                     <p>{movie.genres ? movie.genres : ""}</p>
                     <h3 id="sobre">About</h3>
                     <p>{strippedString}</p>
-                    
                     
                  </div>
             </div>

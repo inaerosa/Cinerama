@@ -27,7 +27,6 @@ function App() {
             <Home movies={movie} />
           </Route>
           <Route path="/login" component={Login} />
-
           <Route path="/profile" component={Profile} />
         </Switch>
       </Router>

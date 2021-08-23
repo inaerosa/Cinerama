@@ -4,7 +4,7 @@
   }
 
   .container-movie img{
-    margin-bottom: 100px;
+    padding-bottom: 3px;
     max-width: 250px;
     max-height: 400px;
   }
@@ -39,4 +39,9 @@
 
 .poster{
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#heart {
+  margin-left: 8%;
+  margin-top: 5.5%;
 }
