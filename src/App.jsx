@@ -28,6 +28,7 @@ function App() {
           </Route>
           <Route path="/login" component={Login} />
           <Route path="/profile" component={Profile} />
+        
         </Switch>
       </Router>
 
