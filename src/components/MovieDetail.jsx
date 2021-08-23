@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Heart } from 'react-feather';
 
 import './MovieDetail.css'
@@ -8,9 +8,12 @@ import Button from './../components/Button'
 
 const MovieDetail = ({movie}) => {
    
+    const [fav, setFav] = useState({})
     const original = `${movie.summary}`
     
     const strippedString = original.replace(/(<([^>]+)>)/gi, "");
+
+   
 
     return (
         <>
@@ -19,8 +22,10 @@ const MovieDetail = ({movie}) => {
                 <div className="container-horizontal">
                
                 {movie.image ?  <img src={movie.image.medium} alt="" srcset="" className="poster"/> :<img src={Transparent} alt="" srcset="" />}
-                <Button><Heart id="heart"/></Button>
+                {/* <Button onClick={handleClick}><Heart id="heart"/></Button> */}
+                <button>Fav</button>
                 </div>
+                
                 <div className="info_filme">
                 
                     <h1>{movie.name ? movie.name : ""}</h1>
