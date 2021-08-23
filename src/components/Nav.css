@@ -1,0 +1,55 @@
+.menu{
+    display: flex;
+    margin-left: 7%;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.menu input{
+    margin-left:25%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+    background-color: #1E0253;
+    border: none;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.137);
+    border-radius: 3px;
+    color: white;
+    font-family: 'Hahmlet', serif;
+    font-weight: bolder;
+
+}
+
+.button-nav{
+    background-color: #1E0253;
+    border: none;
+    color: white;
+    font-family: 'Hahmlet', serif;
+    font-weight: bolder; 
+}
+
+#title-nav{
+    font-family: 'Lobster', cursive;
+    font-size: 2rem;
+    text-shadow: 1px 1px 2px black;
+}
+
+#btn-search{ 
+    
+    padding: 10px;
+    margin-right: 30%;
+}
+
+.link{
+    color: white;
+    text-decoration: none;
+}
+
+#icon{
+    background-color: #1E0253;
+    border: none;
+    color: white;
+}
+
+#btn-login{
+    margin-left: 28vw;
+}
