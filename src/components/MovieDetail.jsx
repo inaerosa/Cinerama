@@ -5,7 +5,6 @@ import Transparent from './../img/transparent.png'
 
 
 const MovieDetail = ({movie}) => {
-    console.log(movie);
    
     const original = `${movie.summary}`
     
