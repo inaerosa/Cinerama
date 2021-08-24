@@ -4,8 +4,7 @@ import picture from './../img/foto.png'
 
 
 const Profile = ({fav}) => {
-    console.log("Perfil")
-    console.log(fav);
+
     return ( 
     <>
         <div>
