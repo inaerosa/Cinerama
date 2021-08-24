@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Modal from './Modal'
 import MovieDetail from './MovieDetail';
 import './Movie.css'
-const Movie = ({ movie }) => {
-    
+const Movie = (props) => {
+    const movie = props.movie;
     const [isModalVisible, setIsModalVisible] = useState(false)
   
     return (
@@ -14,7 +14,8 @@ const Movie = ({ movie }) => {
                     <button className="btn-movie" onClick={() => { setIsModalVisible(true) }}><img src={movie.image.medium} alt="" /><br></br> <p>{movie.name}</p> </button>
                     {isModalVisible ? (
                         <Modal onClose={() => setIsModalVisible(false)}>
-                            <MovieDetail movie={movie}/>
+                            <MovieDetail fav={props.fav} movie={movie} handleClickAddition={props.handleClickAddition} />
+                            
                         </Modal>
                     ) : null}
                 </div>

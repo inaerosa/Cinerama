@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom'
 
 import Subscribe from './../components/Subscribe'
 import Modal from './../components/Modal'
 import './Login.css'
 
-const Login = () => {
-
+const Login = (props) => {
+    const fav = props.fav;
+    console.log(fav);
     const [isModalVisible, setIsModalVisible] = useState(false)
 
     return (
@@ -31,8 +31,9 @@ const Login = () => {
                 <div id="titulo">
                     <h1>Cinerama</h1>
                     <p>Seu portal de filmes</p>
+                   
                 </div>
-
+               
             </div>
     </>
  

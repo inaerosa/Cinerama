@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { BrowserRouter as Router, Switch, useHistory} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, useHistory, Link} from 'react-router-dom'
 
 import { User, Search } from 'react-feather';
 
@@ -10,6 +10,7 @@ import './Nav.css'
 import axios from 'axios';
 import MovieDetail from './MovieDetail'
 import Modal from './Modal'
+
 
 
 const Nav = () => {
@@ -42,7 +43,8 @@ const Nav = () => {
                             <button id="title-nav" class="button-nav">
                                 Cinerama
                             </button>
-
+                            <button onClick={() => {  history.push(`/profile`) }}>Movies</button>
+                        
                             <input type="text" onChange={handleInputChange} placeholder="  search for a movie" size={30}></input>
                             <button id="icon" onClick={() => {handleClick(); setIsModalVisible(true) }}><Search ></Search></button>
                             {isModalVisible ? (

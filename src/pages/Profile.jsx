@@ -3,8 +3,9 @@ import './Profile.css'
 import picture from './../img/foto.png'
 
 
-const Profile = ({movies}) => {
-    
+const Profile = ({fav}) => {
+    console.log("Perfil")
+    console.log(fav);
     return ( 
     <>
         <div>
@@ -17,6 +18,8 @@ const Profile = ({movies}) => {
                 <div className="lista">
                 <div className="items_lista">
                        <h2>My Favorites</h2> 
+                       {fav ? fav.map (fav => <li>{fav.name}</li>) : ""  }
+                       
                     </div>    
                 </div>
             </div>
