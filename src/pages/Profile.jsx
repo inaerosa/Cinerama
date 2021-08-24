@@ -17,7 +17,7 @@ const Profile = ({fav}) => {
                 <div className="lista">
                 <div className="items_lista">
                        <h2>My Favorites</h2> 
-                       {fav ? fav.map (fav => <li>{fav.name}</li>) : ""  }
+                       {fav ? fav.map (fav => <li>{fav.name}</li> ) : ""  }
                        
                     </div>    
                 </div>

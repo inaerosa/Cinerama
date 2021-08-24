@@ -26,17 +26,20 @@ function App() {
     } 
   }
 
+  const handleClickRemoval = (movieId) => {
+    setFav(movie.filter(movie => movie.id !== movieId));
+  }
   return (
     <div className="App">
 
       <Router>
         <Switch>
           <Route path="/" exact >
-            <Movies movies={movie} fav={fav}handleClickAddition={handleClickAddition}/>
+            <Movies movies={movie} fav={fav} handleClickAddition={handleClickAddition}/>
           </Route>
           <Route path="/login" component={Login} />
           <Route path="/profile" exact>
-            <Profile fav={fav} />
+            <Profile fav={fav} handleClickRemoval={handleClickRemoval}/>
           </Route>
         </Switch>
       </Router>
