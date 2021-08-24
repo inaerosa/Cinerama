@@ -10,7 +10,7 @@ const Movies = (props) => {
         <Nav/>
         <div id="container">
              {movies.map(movie =>   
-                 <Movie movie={movie} fav={props.fav} key={movie.id} handleClickAddition={props.handleClickAddition} />
+                 <Movie movie={movie} fav={props.fav} key={movie.id} handleClickAddition={props.handleClickAddition} handleClickRemoval={props.handleClickRemoval} />
          
                )}
         </div>

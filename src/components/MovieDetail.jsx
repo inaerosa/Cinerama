@@ -18,17 +18,22 @@ const MovieDetail = (props) => {
         props.handleClickAddition(movie);
     }
 
+    const removeFavorite = (id) => {
+        props.handleClickRemoval(id);
+    }
+
     return (
         <>
 
             <div className="container-movie">
                 <div className="container-horizontal">
                     {movie.image ? <img src={movie.image.medium} alt="" className="poster" /> : <img src={Transparent} alt="" srcset="" />}
-                    <Button onClick={() => addFavorite(movie)}><Heart id="heart" /></Button>
+                    <Button onClick={() => addFavorite(movie)}><Heart classs="heart" /></Button>
+                    <Button onClick= {()=> removeFavorite(movie.id)}><Heart id="heart" /></Button>
+                
                 </div>
 
-                <div className="info_filme">
-
+                <div className="info_filme">   
                     <h1>{movie.name ? movie.name : ""}</h1>
                     <p>{movie.genres ? movie.genres : ""}</p>
                     <h3 id="sobre">About</h3>
