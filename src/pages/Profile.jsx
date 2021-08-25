@@ -3,8 +3,10 @@ import './Profile.css'
 import picture from './../img/foto.png'
 
 
-const Profile = ({fav}) => {
+const Profile = (props) => {
 
+    let fav = props.fav;
+   console.log(props)
     return ( 
     <>
         <div>
