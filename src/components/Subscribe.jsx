@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Subscribe.css'
 
 const Subscribe = (props) => {
-    //crio estado pra cada dado
+    
     const [name, setName] = useState('');
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
