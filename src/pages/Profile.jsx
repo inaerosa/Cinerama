@@ -6,14 +6,15 @@ import picture from './../img/foto.png'
 const Profile = (props) => {
 
     let fav = props.fav;
-   console.log(props)
+    let user = props.userList[0];
+   console.log(user)
     return ( 
     <>
         <div>
             <div className="thumbnail">
         
                 <img src={picture} alt="" />
-                <h3><strong>username</strong></h3>
+                <h3><strong>{user.username}</strong></h3>
             </div>
             <div className="fav">
                 <div className="lista">
