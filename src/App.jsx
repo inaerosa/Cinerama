@@ -10,14 +10,24 @@ function App() {
 
   const [movie, setMovie] = useState([])
   const [fav, setFav] = useState([])
-
   const [userList, setUserList] = useState([])
+  const [username, setUser] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
 
   useEffect(() => {
     axios.get('http://localhost:3001/read').then((response) => {
       setUserList(response.data);
     })
   })
+
+  const addUser = () => {
+    axios.post('http://localhost:3001/insert', {
+      name: name,
+      username: username,
+      email: email
+    })
+  }
 
   const baseURL = "https://api.tvmaze.com/shows?page=1"
 
