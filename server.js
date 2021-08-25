@@ -17,6 +17,16 @@ mongoose.connect('mongodb://localhost:27017/dbCinerama', {useNewUrlParser: true,
     console.log(err);
 })
 
+app.get('/', async (req, res) =>{
+    User.find({}, (err,result) => {
+        if (err){
+            res.send(err);
+        }
+        res.send(result);
+    })
+})
+
+
 
 app.listen (3001, () => {
     console.log("running")
