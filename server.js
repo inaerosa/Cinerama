@@ -38,6 +38,13 @@ app.post("/insert", async (req, res) => {
     }
 })
 
+app.put ('/user/:id/fav', async (req, res) => {
+    const {id} = req.params;
+    const {curtido} = req.body;
+    await User.findByIdAndUpdate(id, {curtidos: {curtido}}, {runValidators: true, new: true})
+})
+
+
 
 app.listen (3001, () => {
     console.log("running")
