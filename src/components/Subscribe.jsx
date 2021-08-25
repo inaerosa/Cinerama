@@ -27,7 +27,7 @@ const Subscribe = (props) => {
     return ( 
         <>
         <div id="cadastro">
-
+            
             <h1>Subscribe!</h1>
             <div id="subscribe-form">
                 <label for="nome">
@@ -43,6 +43,7 @@ const Subscribe = (props) => {
                 <label for = "password">
                     <input type="password" name="password" id="password" placeholder="Password" onChange={handleInputPassword}/>
                 </label>
+                
                 <button type="submit" id="subscribe-button" onClick = { () => props.handleClickAddUser(name, username, email, password )}>I'm ready!</button>
             </div>
         </div>

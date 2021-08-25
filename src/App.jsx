@@ -21,14 +21,6 @@ function App() {
     })
   })
 
-  const addUser = () => {
-    axios.post('http://localhost:3001/insert', {
-      name: name,
-      username: username,
-      email: email
-    })
-  }
-
   const baseURL = "https://api.tvmaze.com/shows?page=1"
 
   useEffect(() => {
@@ -50,10 +42,12 @@ function App() {
 
   
   const handleClickAddUser = (name, username, email, password) => {
-    console.log("entrou em handleClickaddUser");
-    console.log(nome, username, email)
-    //gravo no state
-    //gravo no banco
+    axios.post('http://localhost:3001/insert', {
+      name: name,
+      username: username,
+      email: email,
+      password: password
+    })
   }
 
   return (

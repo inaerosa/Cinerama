@@ -6,8 +6,7 @@ import './Login.css'
 
 const Login = (props) => {
     const fav = props.fav;
-    
-    console.log(fav);
+ 
     const [isModalVisible, setIsModalVisible] = useState(false)
 
     return (
