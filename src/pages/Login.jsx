@@ -5,7 +5,7 @@ import Modal from './../components/Modal'
 import './Login.css'
 
 const Login = (props) => {
-    const fav = props.fav;
+ 
     const history = useHistory();
     const [isModalVisible, setIsModalVisible] = useState(false)
 
