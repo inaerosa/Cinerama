@@ -48,8 +48,12 @@ function App() {
     setFav(fav.filter(fav => fav.id !== movieId));
   }
 
+  
   const handleClickAddUser = (name, username, email, password) => {
-   
+    console.log("entrou em handleClickaddUser");
+    console.log(nome, username, email)
+    //gravo no state
+    //gravo no banco
   }
 
   return (

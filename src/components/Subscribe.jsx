@@ -31,17 +31,17 @@ const Subscribe = (props) => {
             <h1>Subscribe!</h1>
             <div id="subscribe-form">
                 <label for="nome">
-                    <input type="text" name="nome" id="nome" placeholder="Name"/>
+                    <input type="text" name="nome" id="nome" placeholder="Name" onChange={handleInputName}/>
                 </label>
                 <label for="username">
-                    <input type="text" name="user" id="user" placeholder= "Username"></input>
+                    <input type="text" name="user" id="user" placeholder= "Username" onChange={handleInputUsername}></input>
                 </label>
                 <label for = "email">
-                    <input type="text" name = "email" id="email" placeholder="Email">
+                    <input type="text" name = "email" id="email" placeholder="Email" onChange={handleInputEmail}>
                     </input>
                 </label>
                 <label for = "password">
-                    <input type="password" name="password" id="password" placeholder="Password" />
+                    <input type="password" name="password" id="password" placeholder="Password" onChange={handleInputPassword}/>
                 </label>
                 <button type="submit" id="subscribe-button" onClick = { () => props.handleClickAddUser(name, username, email, password )}>I'm ready!</button>
             </div>
