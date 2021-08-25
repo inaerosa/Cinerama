@@ -11,6 +11,14 @@ function App() {
   const [movie, setMovie] = useState([])
   const [fav, setFav] = useState([])
 
+  const [userList, setUserList] = useState([])
+
+  useEffect(() => {
+    axios.get('http://localhost:3001/read').then((response) => {
+      setUserList(response.data);
+    })
+  })
+
   const baseURL = "https://api.tvmaze.com/shows?page=1"
 
   useEffect(() => {
