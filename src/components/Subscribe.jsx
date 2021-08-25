@@ -1,7 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Subscribe.css'
 
-const Subscribe = () => {
+const Subscribe = (props) => {
+    //crio estado pra cada dado
+    const [name, setName] = useState('');
+    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const handleInputName = (e) => {
+        setName(e.target.value);
+    }
+
+    const handleInputUsername = (e) => {
+        setUsername(e.target.value);
+    }
+
+    const handleInputEmail = (e) => {
+        setEmail(e.target.value);
+    }
+
+    const handleInputPassword = (e) => {
+        setPassword(e.target.value)
+    }
+    
     return ( 
         <>
         <div id="cadastro">
@@ -21,7 +43,7 @@ const Subscribe = () => {
                 <label for = "password">
                     <input type="password" name="password" id="password" placeholder="Password" />
                 </label>
-                <button type="submit" id="subscribe-button">I'm ready!</button>
+                <button type="submit" id="subscribe-button" onClick = { () => props.handleClickAddUser(name, username, email, password )}>I'm ready!</button>
             </div>
         </div>
     </>

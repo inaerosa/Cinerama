@@ -48,6 +48,10 @@ function App() {
     setFav(fav.filter(fav => fav.id !== movieId));
   }
 
+  const handleClickAddUser = (name, username, email, password) => {
+   
+  }
+
   return (
     <div className="App">
 
@@ -57,7 +61,7 @@ function App() {
             <Movies movies={movie} fav={fav} handleClickAddition={handleClickAddition} handleClickRemoval={handleClickRemoval}/>
           </Route>
           <Route path="/login">
-              <Login addUser={addUser}/>
+              <Login handleClickAddUser={handleClickAddUser}/>
           </Route>
           <Route path="/profile" exact>
             <Profile fav={fav} handleClickRemoval={handleClickRemoval}/>

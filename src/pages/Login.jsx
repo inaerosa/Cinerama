@@ -20,10 +20,10 @@ const Login = (props) => {
                     <input type="email" name="email" id="email" placeholder="E-mail" size="30"/>
                     <input type="password" name="senha" id="senha" placeholder="Senha" size="30"/>
                     <button>Entrar</button>
-                    <button id="btn-subscribe" onClick={() => {setIsModalVisible(true) }}>Quero me Cadastrar</button>
+                    <button id="btn-subscribe" onClick={() => {setIsModalVisible(true)}}>Quero me Cadastrar</button>
                             {isModalVisible ? (
                                 <Modal onClose={() => setIsModalVisible(false)}>
-                                    <Subscribe addUser={props.addUser}/>
+                                    <Subscribe handleClickAddUser={props.handleClickAddUser}/>
                                 </Modal>
                             ) : null}
                     

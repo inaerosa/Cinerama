@@ -21,7 +21,6 @@ const Nav = () => {
 
     const handleInputChange = (e) => {
         setInputSearch(e.target.value);
-
     }
 
 
