@@ -14,7 +14,7 @@ const Profile = (props) => {
             <div className="thumbnail">
         
                 <img src={picture} alt="" />
-                <h3><strong>{user.username}</strong></h3>
+                <h3><strong>{user && user.username}</strong></h3>
             </div>
             <div className="fav">
                 <div className="lista">
