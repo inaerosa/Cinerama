@@ -56,7 +56,9 @@ function App() {
           <Route path="/" exact >
             <Movies movies={movie} fav={fav} handleClickAddition={handleClickAddition} handleClickRemoval={handleClickRemoval}/>
           </Route>
-          <Route path="/login" component={Login} />
+          <Route path="/login">
+              <Login addUser={addUser}/>
+          </Route>
           <Route path="/profile" exact>
             <Profile fav={fav} handleClickRemoval={handleClickRemoval}/>
           </Route>
