@@ -44,7 +44,11 @@ app.put ('/user/:id/fav', async (req, res) => {
     await User.findByIdAndUpdate(id, {curtidos: {curtido}}, {runValidators: true, new: true})
 })
 
-
+app.delete('/delete/:id', async (req, res) => {
+    const id = req.params.id;
+    await User.findByIdAndRemove(id).exec();
+    res.send('deleted');
+})
 
 app.listen (3001, () => {
     console.log("running")
