@@ -6,6 +6,7 @@ import './Login.css'
 
 const Login = (props) => {
     const fav = props.fav;
+    
     console.log(fav);
     const [isModalVisible, setIsModalVisible] = useState(false)
 
@@ -22,7 +23,7 @@ const Login = (props) => {
                     <button id="btn-subscribe" onClick={() => {setIsModalVisible(true) }}>Quero me Cadastrar</button>
                             {isModalVisible ? (
                                 <Modal onClose={() => setIsModalVisible(false)}>
-                                    <Subscribe/>
+                                    <Subscribe addUser={props.addUser}/>
                                 </Modal>
                             ) : null}
                     
