@@ -27,6 +27,17 @@ app.get('/', async (req, res) =>{
 })
 
 
+app.post("/insert", async (req, res) => {
+    let {nome, username, email} = req.body;
+    const user = new User (nome, username, email);
+    try{
+        await user.save();
+        res.send("inserted data");
+    } catch(err){
+        console.log(err)
+    }
+})
+
 
 app.listen (3001, () => {
     console.log("running")
