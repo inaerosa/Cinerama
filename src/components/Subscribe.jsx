@@ -7,7 +7,7 @@ const Subscribe = () => {
         <div id="cadastro">
 
             <h1>Subscribe!</h1>
-            <form action="/user" method="POST" id="subscribe-form">
+            <div id="subscribe-form">
                 <label for="nome">
                     <input type="text" name="nome" id="nome" placeholder="Name"/>
                 </label>
@@ -22,7 +22,7 @@ const Subscribe = () => {
                     <input type="password" name="password" id="password" placeholder="Password" />
                 </label>
                 <button type="submit" id="subscribe-button">I'm ready!</button>
-            </form>
+            </div>
         </div>
     </>
      );
