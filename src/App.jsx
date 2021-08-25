@@ -19,7 +19,8 @@ function App() {
     axios.get('http://localhost:3001/read').then((response) => {
       setUserList(response.data);
     })
-  })
+  },[])
+
 
   const baseURL = "https://api.tvmaze.com/shows?page=1"
 
@@ -62,7 +63,7 @@ function App() {
               <Login handleClickAddUser={handleClickAddUser}/>
           </Route>
           <Route path="/profile" exact>
-            <Profile fav={fav} handleClickRemoval={handleClickRemoval}/>
+            <Profile fav={fav} handleClickRemoval={handleClickRemoval} userList={userList}/>
           </Route>
         </Switch>
       </Router>
