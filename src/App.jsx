@@ -10,7 +10,7 @@ function App() {
 
   const [movie, setMovie] = useState([])
   const [fav, setFav] = useState([])
-  // const [favList, setFavList] = useState([])
+  const [favList, setFavList] = useState([])
 
   const baseURL = "https://api.tvmaze.com/shows?page=1"
 
@@ -20,11 +20,11 @@ function App() {
     }, [])
   })
 
-  // useEffect(() => {
-  //   axios.get('http://localhost:3001/read').then((response) => {
-  //     setFavList(response.data);
-  //   })
-  // },[])
+  useEffect(() => {
+    axios.get('http://localhost:3001/read').then((response) => {
+      setFavList(response.data);
+    })
+  },[])
 
   const listAddFav = (id_movie, name, url, status) => {
     axios.post('http://localhost:3001/insert', {
@@ -63,7 +63,7 @@ function App() {
             <Movies movies={movie} handleClickAddition={handleClickAddition} handleClickRemoval={handleClickRemoval}/>
           </Route>
           <Route path="/profile" exact>
-            <Profile fav={fav} handleClickRemoval={handleClickRemoval} />
+            <Profile favList={favList} handleClickRemoval={handleClickRemoval} />
           </Route>
         </Switch>
       </Router>
