@@ -34,7 +34,7 @@ const Profile = (props) => {
                                     <div id="fav" key={key}>
                                         <div class="content-movie">
                                             <li>{fav.name} | {fav.status}</li>
-                                            <button onClick={() => removeFavorite(fav)}>Remover</button>
+                                            <button id="btn-remove" onClick={() => removeFavorite(fav)}>Remove</button>
                                         </div>
                                     </div>
                                 ) : ""}
