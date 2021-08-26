@@ -12,7 +12,6 @@ import MovieDetail from './MovieDetail'
 import Modal from './Modal'
 
 
-
 const Nav = () => {
     const [inputSearch, setInputSearch] = useState('');
     const [movie, setMovie] = useState({});
