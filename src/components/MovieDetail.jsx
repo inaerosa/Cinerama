@@ -19,8 +19,8 @@ const MovieDetail = (props) => {
         
     }
 
-    const removeFavorite = (id) => {
-        props.handleClickRemoval(id);
+    const removeFavorite = (movie) => {
+        props.handleClickRemoval(movie);
     }
 
     return (
@@ -30,7 +30,7 @@ const MovieDetail = (props) => {
                 <div className="container-horizontal">
                     {movie.image ? <img src={movie.image.medium} alt="" className="poster" /> : <img src={Transparent} alt="" srcset="" />}
                     <Button onClick={() => addFavorite(movie)}><Heart classs="heart" /></Button>
-                    <Button onClick= {()=> removeFavorite(movie.id)}><Heart id="heart" /></Button>
+                    <Button onClick= {()=> removeFavorite(movie)}><Heart id="heart" /></Button>
                 
                 </div>
 

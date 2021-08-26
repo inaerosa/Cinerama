@@ -45,18 +45,17 @@ function App() {
     } 
   }
 
-  const handleClickRemoval = (movieId) => {
-    setFav(fav.filter(fav => fav.id !== movieId));
-    listRemoveFav(movieId);
+  const handleClickRemoval = (movie) => {
+    setFav(fav.filter(fav => fav.id !== movie.id));
+    listRemoveFav(movie._id); 
   }
 
-  const listRemoveFav = (movieId) => {
-    axios.delete(`http://localhost:3001/delete${movieId}`)
+  const listRemoveFav = (id) => {
+    axios.delete(`http://localhost:3001/delete/${id}`)
   }
 
   return (
     <div className="App">
-      
       <Router>
         <Switch>
           <Route path="/" exact >

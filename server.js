@@ -37,17 +37,11 @@ app.post("/insert", async (req, res) => {
         console.log(err)
     }
 })
-
-app.put ('/user/:id/fav', async (req, res) => {
-    const {id} = req.params;
-    const {curtido} = req.body;
-    await User.findByIdAndUpdate(id, {curtidos: {curtido}}, {runValidators: true, new: true})
-})
-
 app.delete('/delete/:id', async (req, res) => {
     const id = req.params.id;
-    await User.findByIdAndRemove(id).exec();
-    res.send('deleted');
+    console.log(id);
+    await User.findByIdAndDelete(id);
+    res.send('deleted')
 })
 
 app.listen (3001, () => {
