@@ -16,6 +16,7 @@ const MovieDetail = (props) => {
 
     const addFavorite = (movie) => {
         props.handleClickAddition(movie);
+        
     }
 
     const removeFavorite = (id) => {

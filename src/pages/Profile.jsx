@@ -5,7 +5,7 @@ import picture from './../img/foto.png'
 
 const Profile = (props) => {
 
-    let fav = props.favList;
+    let fav = props.fav;
  
     return ( 
     <>
