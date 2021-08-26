@@ -5,23 +5,21 @@ import picture from './../img/foto.png'
 
 const Profile = (props) => {
 
-    let fav = props.fav;
-    let user = props.userList[0];
-   console.log(user)
+    let fav = props.favList;
+ 
     return ( 
     <>
         <div>
             <div className="thumbnail">
         
                 <img src={picture} alt="" />
-                <h3><strong>{user && user.username}</strong></h3>
+                <h3><strong>user</strong></h3>
             </div>
             <div className="fav">
                 <div className="lista">
                 <div className="items_lista">
                        <h2>My Favorites</h2> 
                        {fav ? fav.map (fav => <li>{fav.name}</li> ) : ""  }
-                       
                     </div>    
                 </div>
             </div>

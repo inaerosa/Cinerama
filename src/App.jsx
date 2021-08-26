@@ -4,21 +4,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios'
 import Movies from './components/Movies'
 import Profile from './pages/Profile'
-import Login from './pages/Login'
+
 
 function App() {
 
   const [movie, setMovie] = useState([])
   const [fav, setFav] = useState([])
-  const [userList, setUserList] = useState([])
-  const [newLike, setNewLike] = useState([])
-
-  useEffect(() => {
-    axios.get('http://localhost:3001/read').then((response) => {
-      setUserList(response.data);
-    })
-  },[])
-
+  const [favList, setFavList] = useState([])
 
   const baseURL = "https://api.tvmaze.com/shows?page=1"
 
@@ -28,32 +20,36 @@ function App() {
     }, [])
   })
 
+  useEffect(() => {
+    axios.get('http://localhost:3001/read').then((response) => {
+      setFavList(response.data);
+    })
+  },[])
+
+  const listAddFav = (id_movie, name, url, status) => {
+    axios.post('http://localhost:3001/insert', {
+      id_movie: id_movie,
+      name: name,
+      url: url, 
+      status: status
+    })
+  }
+
   const handleClickAddition = (movie) => {
     if (!fav.includes(movie)){
       const newMovie = [...fav, movie]
       setFav(newMovie);
-    } 
-    // axios.put(`http://localhost:3001/update`${user._id}, {
-    //   movie: movie
-    // })
+      listAddFav(newMovie.id, newMovie.name, newMovie.url, newMovie.status);
+    }  
   }
 
   const handleClickRemoval = (movieId) => {
     setFav(fav.filter(fav => fav.id !== movieId));
-    axios.delete(`http://localhost:3001/delete${fav.id}`)
-  }
-  
-  const handleClickAddUser = (name, username, email, password) => {
-    axios.post('http://localhost:3001/insert', {
-      name: name,
-      username: username,
-      email: email,
-      password: password
-    })
+    listRemoveFav(movieId);
   }
 
-  const updateMovie = (fav) => {
-    
+  const listRemoveFav = (movieId) => {
+    axios.delete(`http://localhost:3001/delete${movieId}`)
   }
 
   return (
@@ -62,13 +58,10 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" exact >
-            <Movies movies={movie} fav={fav} handleClickAddition={handleClickAddition} handleClickRemoval={handleClickRemoval} updateMovie={updateMovie}/>
+            <Movies movies={movie} handleClickAddition={handleClickAddition} handleClickRemoval={handleClickRemoval}/>
           </Route>
-          <Route path="/login">
-              <Login handleClickAddUser={handleClickAddUser}/>
-          </Route>
-          <Route path="/profile/:id" exact>
-            <Profile fav={fav} handleClickRemoval={handleClickRemoval} userList={userList}/>
+          <Route path="/profile" exact>
+            <Profile fav={favList} handleClickRemoval={handleClickRemoval} />
           </Route>
         </Switch>
       </Router>

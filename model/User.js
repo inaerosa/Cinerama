@@ -2,27 +2,22 @@ const mongoose = require('mongoose');
 
 
 const userSchema = new mongoose.Schema({
+    id_movie:{
+        type: Number, 
+        required: true
+    },
     name:{
         type: String,
         required: true
+    },
+    url: {
+        type: Number, 
+        required: true
     }, 
-    username:{
+    status: {
         type: String, 
         required: true
-    },
-    email:{
-        type: String, 
-        required: true
-    },
-    password: {
-        type: String, 
-        require: true
-    },
-    curtidos: [{
-        id:{
-            type: Number,
-        }
-    }]
+    }
 })
 
 
