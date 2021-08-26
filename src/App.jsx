@@ -11,6 +11,7 @@ function App() {
   const [movie, setMovie] = useState([])
   const [fav, setFav] = useState([])
   const [userList, setUserList] = useState([])
+  const [newLike, setNewLike] = useState([])
 
   useEffect(() => {
     axios.get('http://localhost:3001/read').then((response) => {
@@ -32,12 +33,15 @@ function App() {
       const newMovie = [...fav, movie]
       setFav(newMovie);
     } 
+    // axios.put(`http://localhost:3001/update`${user._id}, {
+    //   movie: movie
+    // })
   }
 
   const handleClickRemoval = (movieId) => {
     setFav(fav.filter(fav => fav.id !== movieId));
+    axios.delete(`http://localhost:3001/delete${fav.id}`)
   }
-
   
   const handleClickAddUser = (name, username, email, password) => {
     axios.post('http://localhost:3001/insert', {
@@ -48,18 +52,22 @@ function App() {
     })
   }
 
+  const updateMovie = (fav) => {
+    
+  }
+
   return (
     <div className="App">
       
       <Router>
         <Switch>
           <Route path="/" exact >
-            <Movies movies={movie} fav={fav} handleClickAddition={handleClickAddition} handleClickRemoval={handleClickRemoval}/>
+            <Movies movies={movie} fav={fav} handleClickAddition={handleClickAddition} handleClickRemoval={handleClickRemoval} updateMovie={updateMovie}/>
           </Route>
           <Route path="/login">
               <Login handleClickAddUser={handleClickAddUser}/>
           </Route>
-          <Route path="/profile" exact>
+          <Route path="/profile/:id" exact>
             <Profile fav={fav} handleClickRemoval={handleClickRemoval} userList={userList}/>
           </Route>
         </Switch>

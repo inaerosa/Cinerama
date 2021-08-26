@@ -51,7 +51,7 @@ const Nav = () => {
                                     <MovieDetail movie={movie} />
                                 </Modal>
                             ) : null}
-                             <button  id="btn-login" class="button-nav" onClick={() => {  history.push(`/login`) }}><User id="icon" /> 
+                             <button  id="btn-login" class="button-nav" onClick={() => {  history.push(`/profile`) }}><User id="icon" /> 
                                 <div id="login-icon">   
                                     
                                 </div>
