@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { BrowserRouter as Router, Switch, useHistory, Link} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, useHistory,} from 'react-router-dom'
 
 import { User, Search } from 'react-feather';
 
@@ -42,7 +42,6 @@ const Nav = () => {
                             <button id="title-nav" class="button-nav">
                                 Cinerama
                             </button>
-                            <button onClick={() => {  history.push(`/profile`) }}>Movies</button>
                         
                             <input type="text" onChange={handleInputChange} placeholder="  search for a movie" size={30}></input>
                             <button id="icon" onClick={() => {handleClick(); setIsModalVisible(true) }}><Search ></Search></button>
@@ -52,9 +51,6 @@ const Nav = () => {
                                 </Modal>
                             ) : null}
                              <button  id="btn-login" class="button-nav" onClick={() => {  history.push(`/profile`) }}><User id="icon" /> 
-                                <div id="login-icon">   
-                                    
-                                </div>
                             </button>
                         </div>
 
