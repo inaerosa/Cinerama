@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const userSchema = new mongoose.Schema({
+const movieSchema = new mongoose.Schema({
     id_movie:{
         type: Number, 
         required: true
@@ -21,6 +21,6 @@ const userSchema = new mongoose.Schema({
 })
 
 
-const User = mongoose.model("User", userSchema);
+const Movie = mongoose.model("User", movieSchema);
 
-module.exports = User;
+module.exports = Movie;
