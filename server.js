@@ -28,8 +28,8 @@ app.get('/read', async (req, res) =>{
 
 
 app.post("/insert", async (req, res) => {
-    let {id, name, url, status} = req.body;
-    const user = new User ({id, name, url, status});
+    let {id_movie, name, url, status} = req.body;
+    const user = new User ({id_movie, name, url, status});
     try{
         await user.save();
         res.send("inserted data");
