@@ -42,7 +42,7 @@ const Nav = () => {
                             <button id="title-nav" class="button-nav">
                                 Cinerama
                             </button>
-                            <button onClick={() => {  history.push(`/profile`); }}>Movies</button>
+                            
                         
                             <input type="text" onChange={handleInputChange} placeholder="  search for a movie" size={30}></input>
                             <button id="icon" onClick={() => {handleClick(); setIsModalVisible(true) }}><Search ></Search></button>
@@ -51,7 +51,11 @@ const Nav = () => {
                                     <MovieDetail movie={movie} />
                                 </Modal>
                             ) : null}
-                             
+                            
+                             <button onClick={() => {  history.push(`/profile`); }} id="icon">
+                                 <User id="btn-login"/>
+                             </button>
+                       
                         </div>
 
                     </nav>

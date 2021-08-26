@@ -19,10 +19,7 @@
     
 }
 
-.items_lista{
-    padding-top: 15%;
-    padding-left: 10%;
-}
+
 
 .items_lista h2{
     font-family: 'Lobster', cursive;
@@ -31,11 +28,29 @@
 }
 .lista{
 
-    height: 100vh;
     background-color: white;
     color: black;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    
+}
+
+#fav{
+    margin-bottom: 3%;
+    width: 20vw;
+    border-radius: 10px;
+    border: 2px solid rgb(95, 23, 113);
+}
+
+.content-movie{
+    padding: 10px;
+}
+
+.items_lista{
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-bottom: 10%;
+    
 }
 

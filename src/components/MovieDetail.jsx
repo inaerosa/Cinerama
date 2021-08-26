@@ -29,7 +29,7 @@ const MovieDetail = (props) => {
             <div className="container-movie">
                 <div className="container-horizontal">
                     {movie.image ? <img src={movie.image.medium} alt="" className="poster" /> : <img src={Transparent} alt="" srcset="" />}
-                    <Link to ="/profile"><Button onClick={() => addFavorite(movie)}><Heart classs="heart" /></Button></Link>
+                   <Button onClick={() => addFavorite(movie)}><Heart classs="heart" /></Button>
                     
                     <Button onClick= {()=> removeFavorite(movie)}><Heart id="heart" /></Button>
                 

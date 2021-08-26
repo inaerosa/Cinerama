@@ -1,10 +1,18 @@
 #container{
     margin-bottom: 10px;
-    margin-left: 2.4vw;
+    margin-left: 3.4vw;
     padding: 2px;
     display: flex;
     flex-wrap: wrap;
-    
+   
+}
+
+#movie{
+    margin-bottom: 3%;
+    width: 20vw;
+    border-radius: 10px;
+    display: flex;
+    max-width: 20vw;
 }
 .btn-movie{
     border: none;
@@ -13,11 +21,13 @@
     padding: 3px;
     background-color: rgba(30,2,83,1);
     color: white;
+    width: 10vw;
 
 }
 
 .btn-movie p{
     flex-wrap: wrap;
+    word-break: normal;
 }
 
 .btn-movie img{
