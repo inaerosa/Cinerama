@@ -1,6 +1,6 @@
 import React from 'react'
 import { Heart } from 'react-feather';
-
+import {Link} from 'react-router-dom'
 import './MovieDetail.css'
 import Transparent from './../img/transparent.png'
 import Button from './../components/Button'
@@ -29,7 +29,8 @@ const MovieDetail = (props) => {
             <div className="container-movie">
                 <div className="container-horizontal">
                     {movie.image ? <img src={movie.image.medium} alt="" className="poster" /> : <img src={Transparent} alt="" srcset="" />}
-                    <Button onClick={() => addFavorite(movie)}><Heart classs="heart" /></Button>
+                    <Link to ="/profile"><Button onClick={() => addFavorite(movie)}><Heart classs="heart" /></Button></Link>
+                    
                     <Button onClick= {()=> removeFavorite(movie)}><Heart id="heart" /></Button>
                 
                 </div>

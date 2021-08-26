@@ -39,7 +39,6 @@ app.post("/insert", async (req, res) => {
 })
 app.delete('/delete/:id', async (req, res) => {
     const id = req.params.id;
-    console.log(id);
     await User.findByIdAndDelete(id);
     res.send('deleted')
 })
