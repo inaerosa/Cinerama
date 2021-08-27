@@ -46,7 +46,9 @@ function App() {
   }
 
   const handleClickRemoval = (movie) => {
+    
     setFav(fav.filter(fav => fav.id !== movie.id));
+
     listRemoveFav(movie._id); 
   }
 

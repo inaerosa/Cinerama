@@ -2,7 +2,7 @@ const express = require('express');
 const app = express()
 const cors = require('cors'); 
 const mongoose = require ('mongoose');
-const User = require('./model/User');
+const Movie = require('./model/Movie');
 
 app.use(express.json());
 app.use(cors());
@@ -18,7 +18,7 @@ mongoose.connect('mongodb://localhost:27017/dbCinerama', {useNewUrlParser: true,
 })
 
 app.get('/read', async (req, res) =>{
-    User.find({}, (err,result) => {
+    Movie.find({}, (err,result) => {
         if (err){
             res.send(err);
         }
@@ -29,9 +29,9 @@ app.get('/read', async (req, res) =>{
 
 app.post("/insert", async (req, res) => {
     let {id_movie, name, url, status} = req.body;
-    const user = new User ({id_movie, name, url, status});
+    const movie = new Movie ({id_movie, name, url, status});
     try{
-        await user.save();
+        await movie.save();
         res.send("inserted data");
     } catch(err){
         console.log(err)
@@ -39,7 +39,7 @@ app.post("/insert", async (req, res) => {
 })
 app.delete('/delete/:id', async (req, res) => {
     const id = req.params.id;
-    await User.findByIdAndDelete(id);
+    await Movie.findByIdAndDelete(id);
     res.send('deleted')
 })
 

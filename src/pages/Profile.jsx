@@ -1,23 +1,18 @@
 import React from 'react';
 import './Profile.css'
 import picture from './../img/foto.png'
-import { useHistory } from 'react-router-dom'
-
-import { Heart } from 'react-feather';
-import Button from './../components/Button'
 
 const Profile = (props) => {
 
     let fav = props.favList;
-    const history = useHistory();
 
     const removeFavorite = (id) => {
         props.handleClickRemoval(id);
     }
 
 
-    return ( 
-    <>
+    return (
+        <>
             <div>
                 <div className="thumbnail">
 
@@ -39,13 +34,13 @@ const Profile = (props) => {
                                     </div>
                                 ) : ""}
                             </div>
-                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-    </>
-            );
+        </>
+    );
 }
 
-            export default Profile;
+export default Profile;
