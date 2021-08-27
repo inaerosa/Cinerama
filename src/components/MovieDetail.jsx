@@ -1,6 +1,5 @@
 import React from 'react'
 import { Heart } from 'react-feather';
-import {Link} from 'react-router-dom'
 import './MovieDetail.css'
 import Transparent from './../img/transparent.png'
 import Button from './../components/Button'
