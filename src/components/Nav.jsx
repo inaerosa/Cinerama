@@ -12,7 +12,6 @@ import MovieDetail from './MovieDetail'
 import Modal from './Modal'
 
 
-
 const Nav = () => {
     const [inputSearch, setInputSearch] = useState('');
     const [movie, setMovie] = useState({});
@@ -35,13 +34,11 @@ const Nav = () => {
     return (
 
         <>
-
             <nav>
                 <div className="menu">
                     <button id="title-nav" class="button-nav">
                         Cinerama
                     </button>
-
 
                     <input type="text" onChange={handleInputChange} placeholder="  search for a movie" size={30}></input>
                     <button id="icon" onClick={() => { handleClick(); setIsModalVisible(true) }}><Search ></Search></button>
@@ -58,9 +55,7 @@ const Nav = () => {
                 </div>
 
             </nav>
-
         </>
-
     );
 }
 
