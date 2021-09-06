@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heart } from 'react-feather';
+import { Heart, X } from 'react-feather';
 import './MovieDetail.css'
 import Transparent from './../img/transparent.png'
 import Button from './../components/Button'
@@ -15,7 +15,7 @@ const MovieDetail = (props) => {
 
     const addFavorite = (movie) => {
         props.handleClickAddition(movie);
-        
+
     }
 
     const removeFavorite = (movie) => {
@@ -28,13 +28,11 @@ const MovieDetail = (props) => {
             <div className="container-movie">
                 <div className="container-horizontal">
                     {movie.image ? <img src={movie.image.medium} alt="" className="poster" /> : <img src={Transparent} alt="" srcset="" />}
-                   <Button onClick={() => addFavorite(movie)}><Heart classs="heart" /></Button>
-                    
-                    <Button onClick= {()=> removeFavorite(movie)}><Heart id="heart" /></Button>
-                
+                    <Button onClick={() => addFavorite(movie)}><Heart className="heart" /></Button>
+                    <Button onClick={() => removeFavorite(movie)}><X /></Button>
                 </div>
 
-                <div className="info_filme">   
+                <div className="info_filme">
                     <h1>{movie.name ? movie.name : ""}</h1>
                     <p>{movie.genres ? movie.genres : ""}</p>
                     <h3 id="sobre">About</h3>
